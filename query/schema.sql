@@ -88,3 +88,20 @@ CREATE TABLE tb_order_items (
 	CONSTRAINT fk_product_id FOREIGN KEY (product_id) REFERENCES tb_products (product_id),
 	CONSTRAINT fk_order_id FOREIGN KEY (order_id) REFERENCES tb_orders (order_id)
 );
+
+CREATE TABLE dim_users (
+	id_user INT NOT NULL,
+	name_user VARCHAR (100) NOT NULL,
+	birthday_user VARCHAR (100) NOT NULL,
+	gender_user VARCHAR (50) NOT NULL,
+	address_user VARCHAR (100) NOT NULL,
+	PRIMARY KEY (user_id)
+);
+
+CREATE TABLE fact_orders (
+	id_product INT NOT NULL,
+	name_product VARCHAR (100) NOT NULL,
+	category_product INT NOT NULL,
+	price_product INT NOT NULL,
+	product_discount INT
+);
